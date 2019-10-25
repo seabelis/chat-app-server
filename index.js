@@ -2,12 +2,14 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const streamRouter=require('./stream/router')
 const app = express()
+const cors = require('cors')
 
 const port = process.env.PORT || 5000
 
 const jsonParser = bodyParser.json()
 
 app.use(jsonParser)
+app.use(cors())
 app.listen(port, () => console.log('server running on port', port))
 
 app.get('/', (request, response) => {
