@@ -9,7 +9,7 @@ const port = process.env.PORT || 5000
 const jsonParser = bodyParser.json()
 
 app.use(jsonParser)
-app.use(cors())
+app.use(cors()) //cors function is executed
 app.listen(port, () => console.log('server running on port', port))
 
 app.get('/', (request, response) => {
