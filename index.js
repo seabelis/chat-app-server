@@ -1,5 +1,5 @@
 const express = require('express')
-
+const streamRouter=require('./stream/router')
 const app = express()
 
 const port = process.env.PORT || 5000
@@ -11,3 +11,4 @@ app.get('/', (request, response) => {
   response.status(200)
   response.send('hello world!')
 })
+app.use(streamRouter)
