@@ -1,6 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const streamRouter=require('./stream/router')
+const userRouter=require('./chatUser/router')
 const app = express()
 const cors = require('cors')
 
@@ -18,3 +19,4 @@ app.get('/', (request, response) => {
   response.send('hello world!')
 })
 app.use(streamRouter)
+app.use(userRouter)
